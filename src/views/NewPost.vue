@@ -14,7 +14,6 @@
         Save is complete.
       </div>
 
-
       <div class="form-group">
         <label class="col-form-label" for="category">Category: </label>
         <select class="form-control" id="category" v-model="category">
@@ -42,52 +41,52 @@
 </template>
 
 <script>
-  import HeaderComponent from '../components/layouts/Header'
-  import FooterComponent from '../components/layouts/Footer'
-  import { mapGetters, mapActions } from 'vuex'
+import HeaderComponent from '../components/layouts/Header'
+import FooterComponent from '../components/layouts/Footer'
+import { mapGetters, mapActions } from 'vuex'
 
-  const date = new Date();
+const date = new Date()
 
-  export default {
-    name: 'NewPost',
-    components: {
-      HeaderComponent,
-      FooterComponent
-    },
-    data () {
-      return {
-        user_id: sessionStorage.getItem('userId') || '',
-        category: '',
-        title: '',
-        content: '',
-        responseMessage: 0
+export default {
+  name: 'NewPost',
+  components: {
+    HeaderComponent,
+    FooterComponent
+  },
+  data () {
+    return {
+      user_id: sessionStorage.getItem('userId') || '',
+      category: '',
+      title: '',
+      content: '',
+      responseMessage: 0
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'getCategories'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'createPost'
+    ]),
+    makePost () {
+      const postData = {
+        'user_id': this.user_id,
+        'category': this.category,
+        'title': this.title,
+        'content': this.content
       }
-    },
-    computed: {
-      ...mapGetters([
-        'getCategories'
-      ])
-    },
-    methods: {
-      ...mapActions([
-        'createPost'
-      ]),
-      makePost () {
-        const postData = {
-          'user_id': this.user_id,
-          'category': this.category,
-          'title': this.title,
-          'content': this.content,
-        }
-        this.createPost(postData).then(() => {
-          this.responseMessage = 1
-        }).catch(error => {
-          console.log(error)
-          this.responseMessage = 2
-        })
-      }
+      this.createPost(postData).then(() => {
+        this.responseMessage = 1
+      }).catch(error => {
+        console.log(error)
+        this.responseMessage = 2
+      })
     }
   }
+}
 </script>
 
 <style scoped>

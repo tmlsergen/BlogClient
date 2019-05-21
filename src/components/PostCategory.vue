@@ -9,27 +9,27 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    name: 'PostCategory',
-    props: {},
-    data () {
-      return {
-        category_id: this.$route.params.id,
-        postData: ''
-      }
-    },
-    computed: {
-      ...mapGetters([
-        'getPostByCategory'
-      ])
-    },
-    methods: {
-    },
-    created () {
+export default {
+  name: 'PostCategory',
+  props: {},
+  data () {
+    return {
+      category_id: this.$route.params.id,
+      postData: ''
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getPostByCategory'
+    ])
+  },
+  methods: {
+  },
+  created () {
   }
+}
 </script>
 
 <style scoped>

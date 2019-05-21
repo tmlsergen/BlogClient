@@ -30,47 +30,47 @@
 </template>
 
 <script>
-  import HeaderComponent from '../components/layouts/Header'
-  import FooterComponent from '../components/layouts/Footer'
-  import { mapActions } from 'vuex'
+import HeaderComponent from '../components/layouts/Header'
+import FooterComponent from '../components/layouts/Footer'
+import { mapActions } from 'vuex'
 
-  export default {
-    name: 'Profile',
-    components: {
-      HeaderComponent,
-      FooterComponent
-    },
-    data () {
-      return {
-        user_id: sessionStorage.getItem('userId') || '',
-        name: sessionStorage.getItem('userName') || '',
-        email: sessionStorage.getItem('userEmail') || '',
-        password: '',
-        c_password: '',
-        responseMessage: 0
-      }
-    },
-    methods: {
-      ...mapActions([
-        'updateUser'
-      ]),
-      updateUserData () {
-        const updateObj = {
-          'name': this.name,
-          'email': this.email,
-          'id': this.user_id
-        }
-        this.updateUser(updateObj).then(() => {
-          this.responseMessage = 1
-        }).catch(error => {
-          console.log(error)
-          this.responseMessage = 2
-        })
-      },
-    },
-    created () {
+export default {
+  name: 'Profile',
+  components: {
+    HeaderComponent,
+    FooterComponent
+  },
+  data () {
+    return {
+      user_id: sessionStorage.getItem('userId') || '',
+      name: sessionStorage.getItem('userName') || '',
+      email: sessionStorage.getItem('userEmail') || '',
+      password: '',
+      c_password: '',
+      responseMessage: 0
     }
+  },
+  methods: {
+    ...mapActions([
+      'updateUser'
+    ]),
+    updateUserData () {
+      const updateObj = {
+        'name': this.name,
+        'email': this.email,
+        'id': this.user_id
+      }
+      this.updateUser(updateObj).then(() => {
+        this.responseMessage = 1
+      }).catch(error => {
+        console.log(error)
+        this.responseMessage = 2
+      })
+    }
+  },
+  created () {
   }
+}
 </script>
 
 <style scoped>

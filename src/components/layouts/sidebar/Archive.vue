@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Archive'
-  }
+export default {
+  name: 'Archive'
+}
 </script>
 
 <style scoped>

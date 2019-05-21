@@ -23,39 +23,39 @@
 </template>
 
 <script>
-  import PostCategoryComponent from '../components/PostCategory'
-  import HeaderComponent from '../components/layouts/Header'
-  import FooterComponent from '../components/layouts/Footer'
-  import SideBarComponent from '../components/layouts/SideBar'
-  import PaginationComponent from '../components/layouts/Pagination'
-  import { mapActions } from 'vuex'
+import PostCategoryComponent from '../components/PostCategory'
+import HeaderComponent from '../components/layouts/Header'
+import FooterComponent from '../components/layouts/Footer'
+import SideBarComponent from '../components/layouts/SideBar'
+import PaginationComponent from '../components/layouts/Pagination'
+import { mapActions } from 'vuex'
 
-  export default {
-    components: {
-      HeaderComponent,
-      FooterComponent,
-      SideBarComponent,
-      PaginationComponent,
-      PostCategoryComponent
-    },
-    name: 'Category',
-    data () {
-      return {
-      }
-    },
-    computed: {},
-    methods: {
-      ...mapActions([
-        'fetchByCategory'
-      ])
-    },
-    created () {
+export default {
+  components: {
+    HeaderComponent,
+    FooterComponent,
+    SideBarComponent,
+    PaginationComponent,
+    PostCategoryComponent
+  },
+  name: 'Category',
+  data () {
+    return {
+    }
+  },
+  computed: {},
+  methods: {
+    ...mapActions([
+      'fetchByCategory'
+    ])
+  },
+  created () {
+    this.fetchByCategory(Number(this.$route.params.id))
+  },
+  watch: {
+    '$route.params.id': function () {
       this.fetchByCategory(Number(this.$route.params.id))
-    },
-    watch: {
-      '$route.params.id': function () {
-        this.fetchByCategory(Number(this.$route.params.id))
-      }
     }
   }
+}
 </script>

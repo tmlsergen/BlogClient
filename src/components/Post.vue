@@ -9,26 +9,26 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    name: 'Post',
-    props: {
-    },
-    data () {
-      return {
-      }
-    },
-    computed: {
-      ...mapGetters([
-        'getPosts',
-      ])
-    },
-    methods: {
-    },
-    created () {
+export default {
+  name: 'Post',
+  props: {
+  },
+  data () {
+    return {
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getPosts'
+    ])
+  },
+  methods: {
+  },
+  created () {
   }
+}
 </script>
 
 <style scoped>

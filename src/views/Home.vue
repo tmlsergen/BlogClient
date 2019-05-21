@@ -31,29 +31,29 @@
 </template>
 
 <script>
-  import PostComponent from '../components/Post'
-  import HeaderComponent from '../components/layouts/Header'
-  import FooterComponent from '../components/layouts/Footer'
-  import SideBarComponent from '../components/layouts/SideBar'
-  import PaginationComponent from '../components/layouts/Pagination'
-  import { mapGetters } from 'vuex'
+import PostComponent from '../components/Post'
+import HeaderComponent from '../components/layouts/Header'
+import FooterComponent from '../components/layouts/Footer'
+import SideBarComponent from '../components/layouts/SideBar'
+import PaginationComponent from '../components/layouts/Pagination'
+import { mapGetters } from 'vuex'
 
-  export default {
-    components: {
-      PostComponent,
-      HeaderComponent,
-      FooterComponent,
-      SideBarComponent,
-      PaginationComponent,
-    },
-    name: 'HelloWorld',
-    data () {
-      return {}
-    },
-    computed: {
-      ...mapGetters([
-        'getUserToken'
-      ])
-    },
+export default {
+  components: {
+    PostComponent,
+    HeaderComponent,
+    FooterComponent,
+    SideBarComponent,
+    PaginationComponent
+  },
+  name: 'HelloWorld',
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapGetters([
+      'getUserToken'
+    ])
   }
+}
 </script>

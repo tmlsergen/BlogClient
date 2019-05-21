@@ -10,19 +10,19 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    name: 'NavBar',
-    data () {
-      return {}
-    },
-    computed: {
-      ...mapGetters([
-        'getCategories'
-      ])
-    }
+export default {
+  name: 'NavBar',
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapGetters([
+      'getCategories'
+    ])
   }
+}
 </script>
 
 <style scoped>

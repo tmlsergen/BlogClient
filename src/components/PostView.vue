@@ -9,33 +9,33 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
-  export default {
-    name: 'PostView',
-    methods: {
-      ...mapActions([
-        'fetchPostById'
-      ])
-    },
-    data () {
-      return {
-        postview: []
-      }
-    },
-    props: {
-      post: Number
-    },
-    computed: {
-      ...mapGetters([
-        'getPosts'
-      ])
-    },
-    created () {
-      this.postview = this.getPosts.filter(item => item.id === this.post)
-      //this.fetchPostById(this.postid)
+export default {
+  name: 'PostView',
+  methods: {
+    ...mapActions([
+      'fetchPostById'
+    ])
+  },
+  data () {
+    return {
+      postview: []
     }
+  },
+  props: {
+    post: Number
+  },
+  computed: {
+    ...mapGetters([
+      'getPosts'
+    ])
+  },
+  created () {
+    this.postview = this.getPosts.filter(item => item.id === this.post)
+    // this.fetchPostById(this.postid)
   }
+}
 </script>
 
 <style scoped>

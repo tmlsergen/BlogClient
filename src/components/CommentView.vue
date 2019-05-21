@@ -19,43 +19,43 @@
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex'
-  import store from '../store'
+import { mapGetters, mapActions } from 'vuex'
+import store from '../store'
 
-  export default {
-    name: 'CommentView',
-    computed: {
-      ...mapGetters([
-        'getCommentByPost'
-      ])
-    },
-    methods: {
-      ...mapActions([
-        'fetchByPost',
-        'postComments'
-      ]),
-      postComment () {
-        const post_id = store.state.userData.id
-        const data = {
-          'post_id': post_id,
-          'content': this.content
-        }
-        this.postComments(data).then(() => {
-          this.fetchByPost(this.$route.params.id)
-          this.comment = ''
-        }).catch(error => console.log(error))
+export default {
+  name: 'CommentView',
+  computed: {
+    ...mapGetters([
+      'getCommentByPost'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'fetchByPost',
+      'postComments'
+    ]),
+    postComment () {
+      const post_id = store.state.userData.id
+      const data = {
+        'post_id': post_id,
+        'content': this.content
       }
-    },
-    data () {
-      return {
-        data: store.state.userStatement,
-        content: ''
-      }
-    },
-    created () {
-      this.fetchByPost(this.$route.params.id)
+      this.postComments(data).then(() => {
+        this.fetchByPost(this.$route.params.id)
+        this.comment = ''
+      }).catch(error => console.log(error))
     }
+  },
+  data () {
+    return {
+      data: store.state.userStatement,
+      content: ''
+    }
+  },
+  created () {
+    this.fetchByPost(this.$route.params.id)
   }
+}
 </script>
 
 <style scoped>

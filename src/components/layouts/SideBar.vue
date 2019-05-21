@@ -5,16 +5,16 @@
 </template>
 
 <script>
-  import ArchiveComponent from './sidebar/Archive'
-  import AboutComponent from './sidebar/About'
+import ArchiveComponent from './sidebar/Archive'
+import AboutComponent from './sidebar/About'
 
-  export default {
-    name: 'SideBar',
-    components: {
-      ArchiveComponent,
-      AboutComponent
-    }
+export default {
+  name: 'SideBar',
+  components: {
+    ArchiveComponent,
+    AboutComponent
   }
+}
 </script>
 
 <style scoped>
