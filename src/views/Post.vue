@@ -12,22 +12,22 @@
 </template>
 
 <script>
-  import PostViewComponent from '../components/PostView'
-  import HeaderComponent from '../components/layouts/Header'
-  import FooterComponent from '../components/layouts/Footer'
-  import CommentViewComponent from '../components/CommentView'
+import PostViewComponent from '../components/PostView'
+import HeaderComponent from '../components/layouts/Header'
+import FooterComponent from '../components/layouts/Footer'
+import CommentViewComponent from '../components/CommentView'
 
-  export default {
-    name: 'Post',
-    components: {
-      PostViewComponent,
-      HeaderComponent,
-      FooterComponent,
-      CommentViewComponent
-    },
-    created () {
-    }
+export default {
+  name: 'Post',
+  components: {
+    PostViewComponent,
+    HeaderComponent,
+    FooterComponent,
+    CommentViewComponent
+  },
+  created () {
   }
+}
 </script>
 
 <style scoped>

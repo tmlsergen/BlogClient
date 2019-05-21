@@ -69,40 +69,39 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
-
-  export default {
-    name: 'SingUp',
-    data () {
-      return {
-        name: '',
-        email: '',
-        password: '',
-        c_password: '',
-      }
-    },
-    methods: {
-      ...mapActions([
-        'registerUser'
-      ]),
-      registerPersons () {
-        const postData = {
-          'name': this.name,
-          'email': this.email,
-          'password': this.password,
-          'c_password': this.c_password
-        }
-        this.registerUser(postData).then(() => {
-          this.$router.push('/')
-        }).catch(error => {
-          console.log(error)
-        })
-      }
-    },
-    computed:{
+export default {
+  name: 'SingUp',
+  data () {
+    return {
+      name: '',
+      email: '',
+      password: '',
+      c_password: ''
     }
+  },
+  methods: {
+    ...mapActions([
+      'registerUser'
+    ]),
+    registerPersons () {
+      const postData = {
+        'name': this.name,
+        'email': this.email,
+        'password': this.password,
+        'c_password': this.c_password
+      }
+      this.registerUser(postData).then(() => {
+        this.$router.push('/')
+      }).catch(error => {
+        console.log(error)
+      })
+    }
+  },
+  computed: {
   }
+}
 </script>
 
 <style scoped>

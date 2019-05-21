@@ -5,9 +5,9 @@
 </template>
 
 <script>
-  export default {
-    name: '404not'
-  }
+export default {
+  name: '404not'
+}
 </script>
 
 <style scoped>

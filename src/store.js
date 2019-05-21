@@ -34,7 +34,7 @@ export default new Vuex.Store({
       state.userData = {
         'id': user.data[0].id,
         'name': user.data[0].name,
-        'email': user.data[0].email,
+        'email': user.data[0].email
       }
       state.userToken = user.data[1]
       console.log(sessionStorage.getItem('userToken'))
@@ -130,7 +130,7 @@ export default new Vuex.Store({
         console.log(response)
       }).catch(error => console.log(error))
     },
-    async createPost({commit}, data){
+    async createPost ({ commit }, data) {
       const config = { headers: { 'Authorization': `Bearer ${sessionStorage.getItem('userToken')}` } }
 
       await axios.post(`http://blog.test/api/v1/post`, data, config).then(response => {

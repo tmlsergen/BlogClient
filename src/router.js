@@ -11,7 +11,6 @@ import NewPost from './views/NewPost'
 
 import store from './store'
 
-
 Vue.use(Router)
 
 const router = new Router({
@@ -61,7 +60,7 @@ const router = new Router({
       name: 'profile',
       component: Profile,
       beforeEnter: (to, from, next) => {
-        if (store.state.userStatement === "false") {
+        if (store.state.userStatement === 'false') {
           next('/')
         }
         next()
@@ -72,7 +71,7 @@ const router = new Router({
       name: 'newpost',
       component: NewPost,
       beforeEnter: (to, from, next) => {
-        if (store.state.userStatement === "false") {
+        if (store.state.userStatement === 'false') {
           next('/')
         }
         next()
@@ -82,7 +81,7 @@ const router = new Router({
       path: '*',
       name: 'Not',
       component: Not
-    },
+    }
   ]
 })
 
@@ -107,6 +106,5 @@ const router = new Router({
 //   next()
 //
 // })
-
 
 export default router

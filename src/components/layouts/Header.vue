@@ -21,24 +21,24 @@
 </template>
 
 <script>
-  import NavBarComponent from './NavBar'
-  import { mapGetters, mapActions } from 'vuex'
-  export default {
-    name: 'Header',
-    components: {
-      NavBarComponent
-    },
-    computed: {
-      ...mapGetters([
-        'getUserToken'
-      ])
-    },
-    methods: {
-      ...mapActions([
-        'logoutUser'
-      ])
-    }
+import NavBarComponent from './NavBar'
+import { mapGetters, mapActions } from 'vuex'
+export default {
+  name: 'Header',
+  components: {
+    NavBarComponent
+  },
+  computed: {
+    ...mapGetters([
+      'getUserToken'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'logoutUser'
+    ])
   }
+}
 </script>
 
 <style scoped>

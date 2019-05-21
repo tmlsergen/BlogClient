@@ -5,20 +5,20 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
-  export default {
-    methods: {
-      ...mapActions([
-        'fetchPosts',
-        'fetchCategories'
-      ])
-    },
-    mounted () {
-      this.fetchPosts()
-      this.fetchCategories()
-    }
+export default {
+  methods: {
+    ...mapActions([
+      'fetchPosts',
+      'fetchCategories'
+    ])
+  },
+  mounted () {
+    this.fetchPosts()
+    this.fetchCategories()
   }
+}
 </script>
 
 <style lang="scss">

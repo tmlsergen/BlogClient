@@ -44,33 +44,33 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
-  export default {
-    name: 'SingIn',
-    data () {
-      return {
-        email: '',
-        password: '',
+export default {
+  name: 'SingIn',
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    ...mapActions([
+      'loginUser'
+    ]),
+    loginPersons () {
+      const postData = {
+        'email': this.email,
+        'password': this.password
       }
-    },
-    methods: {
-      ...mapActions([
-        'loginUser'
-      ]),
-      loginPersons () {
-        const postData = {
-          'email': this.email,
-          'password': this.password,
-        }
-        this.loginUser(postData).then(() => {
-          this.$router.push("/")
-        }).catch( error => {
-          console.log(error)
-        })
-      }
+      this.loginUser(postData).then(() => {
+        this.$router.push('/')
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
+}
 </script>
 
 <style scoped>
